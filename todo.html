@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo Application written in vanilla JS</title>
+    <link rel="stylesheet" href="todo.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="./todo.js"></script>
+</head>
+<body>
+    <div id="app" class="u-hidden">
+        <div class="u-grid">
+            <div class="u-row">
+                <div class="c-header">
+                    <h1 class="c-header__name">
+                        To Dos
+                    </h1>
+                    
+                    <!-- Number of items here -->
+                    <span id="number-of-items" class="c-header__numberOfItems">
+                        0
+                    </span>
+                </div>
+            </div>
+
+            <div class="u-row">
+                <div class="c-states">
+                    <span class="c-states__item">
+                        <i class="c-states__itemIcon c-states__itemIcon--green"></i>
+                        Done
+                    </span>
+                    <span class="c-states__item">
+                        <i class="c-states__itemIcon c-states__itemIcon--gray"></i>
+                        Todo
+                    </span>
+                </div>
+            </div>
+
+            <div class="u-row">
+                <div class="c-newItemFixedButton">
+                    <button id="open-new-item" type="button" class="u-button" title="Add a new Todo">
+                        <i data-feather="plus"></i>
+                    </button>
+                </div>
+
+                <div id="new-item" class="c-newItem u-none">
+                    <input id="new-item-name" type="text" placeholder="Name of the task">
+                    <textarea id="new-item-desc" placeholder="Description..."></textarea>
+                    <div class="u-row">
+                        <button id="create-todo" type="button" class="c-newItem__add u-button" title="Add a new Todo">
+                            <i data-feather="plus"></i>
+                        </button>
+                        <button id="close-new-item" type="button" class="c-newItem__close" title="Close">
+                            <i data-feather="x"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="u-row">
+                <!-- If todos are zero -->
+                <div class="c-noTodo u-none">
+                    You didn't create any To-do item yet :(
+                </div>
+
+                <div id="items" class="c-items">
+                    <!-- For loop here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="item-template" type="text/template">
+        <!-- is done or not -->
+        <div class="c-items__each">
+            <div class="c-items__eachName">
+                <!-- Number of the task here -->
+                <!-- Name of the task here -->
+                <div class="c-items__eachNameWrapper"></div>
+                <input type="text" value="Name of the task" class="c-items__eachNameInput" placeholder="Name of the task">
+            </div>
+            <div class="c-items__eachDesc">
+                <!-- Desc of the task here -->
+                <div class="c-items__eachDescWrapper"></div>
+                <textarea class="c-items__eachDescTextarea" placeholder="Description..."></textarea>
+            </div>
+            <div data-id="" class="c-items__eachOperations">
+                <button id="check-item" type="button" class="c-items__eachCheckbox" title="Check">
+                    <!-- Selected or not -->
+                    <div class="c-items__eachCheckboxWrapper">
+                        <i data-feather="check"></i>
+                        <span class="c-items__eachCheckboxText">
+                            Done
+                        </span>
+                    </div>
+                </button>
+                <button id="edit-item" type="button" class="c-items__eachEdit" title="Edit">
+                    <i data-feather="edit-2"></i>
+                </button>
+                <button id="delete-item" type="button" class="c-items__eachDelete" title="Delete">
+                    <i data-feather="trash-2"></i>
+                </button>
+
+                <button id="save-edited-item" type="button" class="c-items__eachSaveEdit" title="Accept">
+                    <i data-feather="check"></i>
+                </button>
+                <button id="cancel-edited-item" type="button" class="c-items__eachCancelEdit" title="Cancel">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+        </div>
+    </script>
+</body>
+</html>
