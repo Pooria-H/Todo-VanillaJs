@@ -1,8 +1,3 @@
-// Save data in the localStorage
-// hide application element before js load
-// Prevent adding a todo with empty name
-// Prevent editing a todo with empty name
-
 function initApp() {
   const that = this;
   const rootElem = document.getElementById('app');
