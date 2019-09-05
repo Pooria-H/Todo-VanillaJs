@@ -6,6 +6,6 @@
 
 ---
 
-- No Framework or Library used except an Web-icons library called feather.js
+- No Framework or Library used except a Web-icons library called feather.js
 
 - The main template stored in a `text/template` script tag.
